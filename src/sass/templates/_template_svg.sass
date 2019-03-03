@@ -1,0 +1,13 @@
+.icon
+	display: inline-block
+	vertical-align: top
+	height: 1em
+	width: 1em
+	fill: currentColor
+{{#shapes}}
+	{{#selector.dimensions}}{{expression}}{{^last}},
+	{{/last}}{{/selector.dimensions}}
+
+		font-size: ({{height.outer}})+px
+		width: ({{width.outer}}/{{height.outer}})+em
+{{/shapes}}

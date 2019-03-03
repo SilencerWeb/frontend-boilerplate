@@ -1,0 +1,6 @@
+.idea/
+.gulp/
+
+node_modules/
+
+dist/

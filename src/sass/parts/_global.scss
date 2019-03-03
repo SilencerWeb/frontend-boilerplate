@@ -1,0 +1,20 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  -ms-overflow-style: scrollbar;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.svg-sprite {
+  display: none;
+}

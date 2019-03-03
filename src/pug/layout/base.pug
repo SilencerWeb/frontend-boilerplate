@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  include head.pug
+
+  body
+    +b.svg-sprite
+
+    block header
+      +header
+
+    block content
+
+    block footer
+      +footer
+
+    block mobile-nav
+      +mobile-nav
+
+    block scripts
+      script(src="js/scripts.js")
+
+    block svg
+      script.
+        var svgPaths = [
+          "./images/sprite_icons.svg"
+        ];
