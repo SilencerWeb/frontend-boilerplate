@@ -1,17 +1,20 @@
 @import "variables";
 @import "mixins";
 
-// Vendor
-
 // Parts
 @import "parts/normalize";
 @import "parts/fonts";
 @import "parts/sprite";
 @import "parts/global";
 
-// Blocks
-@import "blocks/container";
-@import "blocks/main-nav";
-@import "blocks/mobile-nav";
-@import "blocks/header";
-@import "blocks/footer";
+// Atoms
+@import "blocks/atoms/container";
+
+// Molecules
+
+// Organisms
+@import "blocks/organisms/header";
+@import "blocks/organisms/footer";
+@import "blocks/organisms/mobile-nav";
+
+// Pages

@@ -3,19 +3,19 @@ include ../../../node_modules/bemto.pug/bemto.pug
 include ../blocks/icon.pug
 include ../blocks/header.pug
 include ../blocks/footer.pug
-include ../blocks/main-nav.pug
 include ../blocks/mobile-nav.pug
+
 
 head
   meta(charset="UTF-8")
   meta(http-equiv="X-UA-Compatible" content="IE=Edge")
 
   block title
-    title
+    title Title
 
   meta(property="description" content="")
   meta(property="keywords" content="")
-  meta(property="og:title" content="")
+  meta(property="og:title" content="Title")
   meta(property="og:description" content="")
   meta(property="og:type" content="website")
   meta(property="og:image" content="")
@@ -24,4 +24,4 @@ head
   meta(name="format-detection" content="telephone=no")
 
   block styles
-    link(rel="stylesheet" href="css/main.css")
+    link(rel="stylesheet" href="./css/main.css")

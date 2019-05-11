@@ -53,7 +53,10 @@ const path = {
       'src/sass/*.sass',
       'src/sass/*.scss',
     ],
-    js: './src/js/*.js',
+    js: {
+      main: ['./src/js/utils/*.js', './src/js/modules/*.js'],
+      vendor: ['./src/js/vendor/*.js'],
+    },
     fonts: 'src/fonts/**/*.*',
     images: {
       png: 'src/images/**/*.png',
@@ -130,10 +133,10 @@ gulp.task('rev', require('./gulp-tasks/rev')(path, gulp, plugins));
 gulp.task('watch', function () {
   global.watch = true;
 
-  gulp.watch(path.watch.pug, gulp.series('pug:dev', 'reload'));
-  // .on('all', function (event, filePath) {
-  //   global.emittyChangedFile = filePath;
-  // });
+  gulp.watch(path.watch.pug, gulp.series('pug:dev', 'reload'))
+    .on('all', function (event, filePath) {
+      global.emittyChangedFile = filePath;
+    });
 
   gulp.watch(path.watch.sass, gulp.series('sass:dev', 'reload'));
   gulp.watch(path.watch.js, gulp.series('js:dev', 'reload'));

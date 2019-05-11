@@ -1,3 +1,5 @@
+block variables
+
 doctype html
 html(lang="en")
   include head.pug
@@ -13,11 +15,12 @@ html(lang="en")
     block footer
       +footer
 
-    block mobile-nav
+    block main-nav
       +mobile-nav
 
     block scripts
-      script(src="js/scripts.js")
+      script(src="./js/vendor.js")
+      script(src="./js/bundle.js")
 
     block svg
       script.

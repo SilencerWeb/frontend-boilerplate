@@ -11,8 +11,27 @@ html {
 body {
   position: relative;
   min-width: 320px;
+  //font-family: $font-family-primary;
+  //color: $color-primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  // These breakpoints are needed for defining their order, otherwise gulp plugin css-mqpacker will mess everything up
+  //@include lg-down {
+  //  color: $color-primary;
+  //}
+  //
+  //@include md-down {
+  //  color: $color-primary;
+  //}
+  //
+  //@include sm-down {
+  //  color: $color-primary;
+  //}
+  //
+  //@include xs-down {
+  //  color: $color-primary;
+  //}
 }
 
 .svg-sprite {

@@ -9,19 +9,29 @@
 
 module.exports = function (path, gulp, plugins, isDev) {
   return function () {
-    return gulp.src(path.src.js)
+    const main = gulp.src(path.src.js.main)
       .pipe(plugins.plumber({
         errorHandler: plugins.notify.onError({
           message: '<%= error.message %>',
           title: 'JS Error!',
         }),
       }))
-      .pipe(plugins.if(isDev, plugins.sourcemaps.init()))
       .pipe(plugins.babel({ presets: ['@babel/preset-env'] }))
-      .pipe(plugins.include())
-      .pipe(plugins.if(isDev, plugins.sourcemaps.write('../maps')))
-      .pipe(plugins.if(!isDev, plugins.uglify()))
+      .pipe(plugins.concat('bundle.js'))
       .pipe(plugins.stripComments())
+      .pipe(plugins.if(!isDev, plugins.uglify()))
       .pipe(gulp.dest(path.build.js));
+
+    const vendor = gulp.src(path.src.js.vendor)
+      .pipe(plugins.plumber({
+        errorHandler: plugins.notify.onError({
+          message: '<%= error.message %>',
+          title: 'JS Error!',
+        }),
+      }))
+      .pipe(plugins.concat('vendor.js'))
+      .pipe(gulp.dest(path.build.js));
+
+    return plugins.merge(main, vendor);
   };
 };
